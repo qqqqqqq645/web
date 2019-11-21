@@ -18,5 +18,28 @@
       text-align: center;
     }
     .container{
-      margin-top: 5%
+      margin-top: 5%;
     }
+    .login_modal_title {
+    	text-align: center;
+    }
+    .login-modal-head{
+    	padding:35px 50px;
+    }
+    .login-modal-body{
+    	padding:40px 50px;
+    }
+   	.login_form {
+   		font-size:20px;
+   	}
+   	.loginbtn {
+   		background-color:#BDBDBD;
+   	}
+   	.loginbtn {
+   		background-color: #555555;
+  		color: white;
+   	}
+   	.cannot-login{
+   		text-align: right;
+   		margin-right:30px;
+   	}

@@ -19,22 +19,18 @@
 	}
 %>
 <body>
+	<div class = "content">
 
 
-	<header>
-		<jsp:include page="./indexframe/nav.jsp" flush="false"/>
-	</header>
-			
-	<div>
-	<section id="areaMain">
-			
-			<jsp:include page="<%=contentPage %>" flush="false"/>
-	</section>
+		<header>
+			<jsp:include page="./indexframe/nav.jsp" flush="false"/>
+		</header>
+		<section id="areaMain">
+				<jsp:include page="<%=contentPage %>" flush="false"/>
+		</section>
+		<footer>
+			<jsp:include page="./indexframe/bottom.jsp" flush="false"/>
+		</footer>
 	</div>
-	<footer>
-		<jsp:include page="./indexframe/bottom.jsp" flush="false"/>
-	</footer>
-
-
 </body>
 </html>
