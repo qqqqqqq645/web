@@ -1,27 +1,22 @@
-@charset "UTF-8";
-#a1{
-     margin-left: 190px;
+ #a1{
+     margin-left: 0px;
      margin-top: 50px;
      font-size:25px;
      color:red;
-   }
-   #a2{
-     margin-left: 190px;
-     display: table;
-     width: 1400px;
-     font-size: 0px;
-     line-height: 0px;
-     padding: 0px;
-     position: relative;
+      }
 
-   }
     footer {
+      position: absolute;
       background-color: Black;
-      padding: 10px 6px;
-
+      padding: 15px 6px;
+      width: 100%;
+      margin-top: 5%;
     }
     .footer_info {
       position: relative;
       color: white;
       text-align: center;
+    }
+    .container{
+      margin-top: 5%
     }

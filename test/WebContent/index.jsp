@@ -24,9 +24,10 @@
 	<header>
 		<jsp:include page="./indexframe/nav.jsp" flush="false"/>
 	</header>
-			<jsp:include page="./indexframe/left.jsp" flush="false"/>
+			
 	<div>
 	<section id="areaMain">
+			
 			<jsp:include page="<%=contentPage %>" flush="false"/>
 	</section>
 	</div>
