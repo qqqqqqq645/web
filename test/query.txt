@@ -1,0 +1,23 @@
+CREATE DATABASE web_db  default CHARACTER SET UTF8;
+USE web_db;
+CREATE TABLE `member` (
+	`id` varchar(50) NOT NULL,
+	`password` varchar(100) NOT NULL,
+	`name` varchar(120) NOT NULL,
+	`reg_date` datetime DEFAULT NULL,
+	`email` varchar (120) NOT NULL,
+	`super` int DEFAULT 0,
+	PRIMARY KEY(`id`)
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	
+CREATE TABLE `member` (
+	`id` varchar(50) NOT NULL,
+	`password` varchar(100) NOT NULL,
+	`name` varchar(120) NOT NULL,
+	`reg_date` datetime DEFAULT NULL,
+	`email` varchar (120) NOT NULL,
+	`super` int DEFAULT 0,
+	PRIMARY KEY(`id`)
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	
+INSERT INTO `web_db`.`member` (`id`, `password`, `name`, `email`, `super`) VALUES ('admin1234', '1234', '김종택', 'dregdog1234@gmail.com', 1);
