@@ -6,16 +6,19 @@ import java.sql.PreparedStatement;
 import java.sql.Timestamp;
 
 public class DbAccess {
-	Class.forName("com.mysql.jdbc.Driver");//해당메모리에 문자열을로딩 8은 com.mysql.cj.jdbc.Driver
+	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
-	try {
-		//String jdbcDriver = "jdbc:mysql://localhost:3306/studyjspc";
-		String jdbcDriver = "jdbc:mysql://192.168.55.144:3306/web_db";
-		String dbUser = "exme";
-		String dbPass = "1q2w3e";
-		conn = DriverManager.getConnection(jdbcDriver,dbUser,dbPass);
-	}
+	String jdbcDriver = "jdbc:mysql://localhost:3306/web_db";
+	String dbUser = "exme";
+	String dbPass = "1q2w3e";
+
+	Class.forName("com.mysql.jdbc.Driver");//해당메모리에 문자열을로딩 8은 com.mysql.cj.jdbc.Driver
+		
+		//String jdbcDriver = "jdbc:mysql://192.168.55.144:3306/web_db";
+		
+		
+	
 		//위문장은 트라이에안너허도됨
 		/*
 		1.커넥터(드라이버) 로딩 mysql 드라이버로딩은 별도의작업
@@ -27,17 +30,17 @@ public class DbAccess {
 		
 		//연결하려는 db서버,유저,비번
 		
-	finally {
-	
-	}
-	public void sendDb(String []args) {
+
+	public void sendDb(String [] asdf) {
 		try {
-		pstmt = conn.prepareStatement("insert into members values(?,?,?,?,?);");
-		pstmt.setString(1,args[0]);
-		pstmt.setString(2,args[1]);
-		pstmt.setString(3,args[2]);
+		conn = DriverManager.getConnection(jdbcDriver,dbUser,dbPass);
+		pstmt = conn.prepareStatement("insert into members values(?,?,?,?,?,?);");
+		pstmt.setString(1,asdf[0]);
+		pstmt.setString(2,asdf[1]);
+		pstmt.setString(3,asdf[2]);
 		pstmt.setTimestamp(4,new Timestamp(System.currentTimeMillis()));
-		pstmt.setString(5,args[3]);
+		pstmt.setString(5,asdf[3]);
+		pstmt.setInt(6,0);
 		pstmt.executeUpdate();
 		} finally {
 		pstmt.close();

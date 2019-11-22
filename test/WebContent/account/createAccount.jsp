@@ -17,8 +17,13 @@
 	query[1] = mem.getPasswd();
 	query[2] = mem.getName();
 	query[3] = mem.getEmail();
+	
 	DbAccess temp = new DbAccess();
-	temp.sendDb(query);
+	
+	
+	for(String re : query){
+		out.print(re+"<br>");
+	}
 	
 %>
 <table width="400" border="1" cellpadding="0" cellspacing="0">

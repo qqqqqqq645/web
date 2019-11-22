@@ -6,9 +6,18 @@ CREATE TABLE `member` (
 	`name` varchar(120) NOT NULL,
 	`reg_date` datetime DEFAULT NULL,
 	`email` varchar (120) NOT NULL,
-	`super` int DEFAULT 0,
+	`authentification` int DEFAULT 0,
 	PRIMARY KEY(`id`)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	
+	
+	CREATE USER 'exme'@'localhost' IDENTIFIED BY '1q2w3e';
+	
+	grant all privileges on web_db.* to 'exme';
+	
+	
+	
+	
 	
 CREATE TABLE `member` (
 	`id` varchar(50) NOT NULL,

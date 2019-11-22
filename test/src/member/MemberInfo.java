@@ -1,5 +1,5 @@
 package member;
-
+import java.lang.*;
 public class MemberInfo {
 	private String id;
 	private String name;
