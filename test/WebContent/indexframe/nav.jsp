@@ -21,7 +21,7 @@
 					</ul></li>
 				<li><a href="#">장바구니</a></li>
 				<li class="active"><a href="#">고객센터</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
+				<li><a href="<%=request.getContextPath() %>?CONTENTPAGE=./account/signUpForm.html"><span class="glyphicon glyphicon-user"></span>
 						Sign Up</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -66,7 +66,7 @@
               <button type="submit" class="btn btn-block loginbtn"><span class="glyphicon glyphicon-off"></span> Login</button>
           </form>
           <br><br>
-          <p class=" cannot-login">아직 회원이 아니십니까? <a href="./index.jsp?CONTENTPAGE=./account/signUpForm.html">회원가입</a></p>
+          <p class=" cannot-login">아직 회원이 아니십니까? <a href="index.jsp?CONTENTPAGE=./account/signUpForm.html">회원가입</a></p>
           <p class=" cannot-login">비밀번호가  <a href="#">기억나지 않습니까?</a></p>
         </div>
           <div class="modal-footer">

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+h2 {
+	text-align:center;
+	border-style: solid;
+	border-color:MediumSeaGreen;
+}
+.row {
+	
+	text-align:center;
+}
+.col-sm-4{
+	padding: 10px 50px;
+	
+}

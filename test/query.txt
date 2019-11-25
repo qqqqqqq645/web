@@ -14,7 +14,7 @@ CREATE TABLE `member` (
 	`id` varchar(50) NOT NULL,
 	`password` varchar(100) NOT NULL,
 	`name` varchar(120) NOT NULL,
-	`reg_date` datetime DEFAULT NULL,
+	`reg_date` date DEFAULT NULL,
 	`email` varchar (120) NOT NULL,
 	`super` int DEFAULT 0,
 	PRIMARY KEY(`id`)
