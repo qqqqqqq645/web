@@ -1,63 +1,91 @@
+<form action="./account/loginRequest.jsp" method="post">
 
-	<form action="./account/createAccount.jsp" method="post">
-		<div class="table-responsive">
-			<table class="table">
-				<thead>
-					<tr>
-						<th><h2>회원가입</h2></th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<div class="form-group">
-						<td><labal>아이디</labal></td>
-						<td><input type="text" class="form-control" name="id"></td>
-						</div>
-					</tr>
-					<tr>
-						<div class="form-group">
-						<td><labal>비밀번호</labal></td>
-						<td><input type="password" class="form-control" id="passwd"  name="passwd"><br>
-							</div> <br> <input type="password" id = "pwchk" placeholder="비밀번호 재입력" >
-							<div id="chkresult"></div></td>
-
-					</tr>
-					<tr>
-						<td><labal>이름</labal></td>
-						<td><input type="text" class="form-control"  name="name"></td>
-					</tr>
-					<tr>
-						<div class="form-group">
-						<td><labal>이메일</labal></td>
-						<td><input type="text" class="form-control" name="email"></td>
-						</div>
-					</tr>
-				</tbody>
-			</table>
-
-			<button type="submit" class="btn ">회원가입</button>
+	<div class="signtable">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>회원가입</h2>
+			</div>
 		</div>
-	</form>
-	<p id="ta"></p>
+
+		<div class="row" margin="top">
+			<div class="form-group">
+				<div class="col-sm-3 nopadding">
+					<labal>아이디</labal>
+				</div>
+				<div class="col-sm-3 nopadding">
+					<input type="text" class="form-control" id="id">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<div class="col-sm-3 nopadding">
+					<labal>비밀번호</labal>
+				</div>
+				<div class="col-sm-3 nopadding">
+					<input type="password" class="form-control" id="passwd">
+				</div>
+				<div class="col-sm-3 nopadding">
+					<input type="password" class="form-control" id="pwchk"
+						placeholder="비밀번호 재입력">
+				</div>
+			</div>
+		</div>
+			<div class="row">
+				<div class="col-sm-3 nopadding">&nbsp</div>
+				<div class="col-sm-3 nopadding">&nbsp</div>
+				<div class="col-sm-3 nopadding" id="chkresult"></div>
+			</div>
+		
+
+		<div class="row">
+			<div class="col-sm-3 nopadding">
+				<labal>이름</labal>
+			</div>
+			<div class="col-sm-3 nopadding">
+				<input type="text" class="form-control" id="name">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<div class="col-sm-3 nopadding">
+					<labal>이메일</labal>
+				</div>
+				<div class="col-sm-3 nopadding">
+					<input type="text" class="form-control" id="emailaddr">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<button type="submit" class="btn ">회원가입</button>
+
+</form>
+<p id="ta"></p>
 <script>
-	function pwChecker(){
+	function pwChecker() {
+
 		var pw1 = document.getElementById("passwd").value;
 		var pw2 = document.getElementById("pwchk").value;
+		var pw2Warn = document.getElementById("pwchk");
 		var result = document.getElementById("chkresult");
-		if((pw2.length>0)){
-			if(pw1 != pw2){
-				result.innerHTML="비밀번호가 일치하지 않습니다.";
-				result.style.color="red";
-				
-			}	
-			else 
-				result.innerHTML="비밀번호가 일치합니다";
-			
-		}
-		
-	}
-	document.getElementById("passwd").onkeyup = function() {pwChecker()};
-	document.getElementById("pwchk").onkeyup = function() {pwChecker()};
+		if ((pw2.length > 0)) {
+			if (pw1 != pw2) {
+				result.innerHTML = "비밀번호가 일치하지 않습니다.";
+				result.style.color = "red";
+			} else	{
+				result.innerHTML = "비밀번호가 일치합니다";
+				result.style.color = "green";
+			}
 
+		}
+		var chk = document.getElementById("pwchk");
+		document.getElementById("ta").innerHTML = pw2Warn.className;
+	}
+	document.getElementById("passwd").onkeyup = function() {
+		pwChecker()
+	};
+	document.getElementById("pwchk").onkeyup = function() {
+		pwChecker()
+	};
 </script>
