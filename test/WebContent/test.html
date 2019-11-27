@@ -15,6 +15,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="./css/signup.css">
 </head>
+<
 <form action="./account/loginRequest.jsp" method="post">
 
 	<div class="signtable">
@@ -49,8 +50,8 @@
 			</div>
 		</div>
 			<div class="row">
-				<div class="col-sm-3 nopadding">&nbsp</div>
-				<div class="col-sm-3 nopadding">&nbsp</div>
+				<div class="col-sm-3 nopadding"></div>
+				<div class="col-sm-3 nopadding"></div>
 				<div class="col-sm-3 nopadding" id="chkresult"></div>
 			</div>
 		
@@ -73,10 +74,25 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+				<div class="col-sm-3 nopadding">주소</div>
+				<div class="col-sm-3 nopadding"><input input class = "form-control" type="text" id="postcode" placeholder="우편번호" ></div>
+				<div class="col-sm-3 nopadding"><input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"></div>
+		</div>
+		<div class="row">
+								<div class="col-sm-3 nopadding"></div>
+								<div class ="col-sm-6 nopadding"><input class = "form-control" type="text" id="userAddress" placeholder="주소"></div>
+		</div>
+		<div class="row">
+								<div class="col-sm-3 nopadding"></div>
+								<div class = "col-sm-6 nopadding"><input input class = "form-control" type="text" id="detailAddress" placeholder="상세주소"></div>
+		</div>
+		<div class = " row">
+			<div class = "col-sm-3 nopadding"></div>
+			<div class = "col-sm-3 nopadding"><a href="index.jsp"><label class = "btn" role = "button">취소</label></a></div>
+			<div class = "col-sm-3 nopadding"><button type="submit" class="btn ">회원가입</button></div>
+		</div>
 	</div>
-
-	<button type="submit" class="btn ">회원가입</button>
-
 </form>
 <p id="ta"></p>
 <script>
