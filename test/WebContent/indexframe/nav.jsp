@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%
+	String loginchk = (String)session.getAttribute("loginchk");
+	String adminchk =(String) session.getAttribute("adminchk");
+	String usrname = (String)session.getAttribute("username");
+	%>
+	<%--페이지 링크는 CONTENTPAGE 파라미터--%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -21,17 +27,22 @@
 					</ul></li>
 				<li><a href="#">장바구니</a></li>
 				<li class="active"><a href="#">고객센터</a></li>
+				<%if (loginchk == null) { %> <%-- 로그인하면 회원가입 막음 --%>
 				<li><a href="<%=request.getContextPath() %>?CONTENTPAGE=./account/signUpForm.html"><span class="glyphicon glyphicon-user"></span>
 						Sign Up</a></li>
+						<%} %>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><imput type="text" name="id"></li>
 				<li><imput type="password" name="pw"></li>
 				<!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-						Login</a></li> -->
+						Login</a></li> --><%if (loginchk == null) { %>
 				<li><a data-toggle="modal"  role = "button" id = "login"
 						data-target="#loginModal">
 						<span class="glyphicon glyphicon-log-in">Login</span></a></li>
+						<%} else { %>
+							<li><a href = "index.jsp?CONTENTPAGE=./indexframe/frontpage.jsp""></a></li>
+						<%} %>
 					
 			</ul>
 		</div>
@@ -54,11 +65,11 @@
           <form role="form" method="post" action="./account/login.jsp">
             <div class="form-group">
               <label for="usrname" class = "login_form"><span class="glyphicon glyphicon-user"></span> 아이디</label>
-              <input type="text" class="form-control" id="usrname" placeholder="아이디">
+              <input type="text" class="form-control" name="usrname" placeholder="아이디">
             </div>
             <div class="form-group">
               <label for="psw" class ="login_form"><span class="glyphicon glyphicon-eye-open"></span> 비밀번호</label>
-              <input type="text" class="form-control" id="psw" placeholder="비밀번호">
+              <input type="text" class="form-control" name="psw" placeholder="비밀번호">
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>로그인 유지</label>

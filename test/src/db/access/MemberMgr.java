@@ -46,4 +46,71 @@ public class MemberMgr {
 		}
 		return result;
 	}
+	
+	public boolean loginCheck(String id, String passwd) {
+		boolean result = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet queryResult = null;
+		try {
+			con = pool.getConnection();
+			pstmt = con.prepareStatement("select id, password from member where id = ? and password = ?");
+			pstmt.setString(1,id);
+			pstmt.setString(2, passwd);
+			queryResult = pstmt.executeQuery();
+			/*result = queryResult.first();
+			System.out.println(result);
+			result = queryResult.next();
+			System.out.println(result);
+			result = queryResult.next();
+			System.out.println(result);*/
+			result = queryResult.next();
+			System.out.println(result);
+		} catch(Exception e) {
+			System.out.println("Exception" + e);
+		} finally {
+			pool.freeConnection(con,pstmt);
+		}
+		return result;
+	}
+	public boolean adminCheck(String id, String passwd) {
+		boolean result = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet queryResult = null;
+		try {
+			con = pool.getConnection();
+			pstmt = con.prepareStatement("select id, password from member where id = ? and password = ? and  super = '1';");
+			pstmt.setString(1, id);
+			pstmt.setString(2, passwd);
+			queryResult = pstmt.executeQuery();
+			result = queryResult.next();
+		} catch(Exception e) {
+			System.out.println("Exception" + e);
+		} finally {
+			pool.freeConnection(con,pstmt);
+		}
+		return result;
+	}
+	
+	public String getName(String id, String passwd) {
+		String name = null;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet queryResult = null;
+		try {
+			con = pool.getConnection();
+			pstmt = con.prepareStatement("select name from member where id = ? and password = ?;");
+			pstmt.setString(1, id);
+			pstmt.setString(2, passwd);
+			queryResult = pstmt.executeQuery();
+			queryResult.next();
+			name = queryResult.getString("name");
+		} catch(Exception e) {
+			System.out.println("Exception" + e);
+		} finally {
+			pool.freeConnection(con,pstmt);
+		}
+		return name;
+	}
 }

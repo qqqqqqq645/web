@@ -40,7 +40,7 @@ public class DBConnectionMgr {
 	private Vector connections = new Vector(10);
 	private String _driver = "com.mysql.jdbc.Driver",	//여기부터
 			//_url = "jdbc:mysql://127.0.0.1:3306/smartproject?serverTimezone=UTC",
-			_url = "jdbc:mysql://192.168.55.144:3306/web_db",
+			_url = "jdbc:mysql://192.168.55.4:3306/web_db?autoReconnect=true&useSSL=false",
 			// _user = "root",
 			// _password = "dongyang"; //여기까지만수정하면쓸수있다
 			_user = "exme",
