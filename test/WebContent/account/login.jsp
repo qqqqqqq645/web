@@ -14,7 +14,11 @@
 		if(loginMgr.adminCheck(usrId, passwd)){
 			session.setAttribute("adminchk", " ");
 		}
-		response.sendRedirect("../index.jsp?CONTENTPAGE=./indexframe/frontpage.jsp");
+		
+		//response.sendRedirect("../index.jsp?CONTENTPAGE=./indexframe/frontpage.jsp");
+		System.out.println(request.getRequestURI());
+		response.get
+		//response.sendRedirect(request.getRequestURI()+"?CONTENTPAGE=./indexframe/frontpage.jsp");
 		//response.sendRedirect("../index.jsp");
 	}
 	else

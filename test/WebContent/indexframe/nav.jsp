@@ -36,12 +36,13 @@
 				<li><imput type="text" name="id"></li>
 				<li><imput type="password" name="pw"></li>
 				<!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-						Login</a></li> --><%if (loginchk == null) { %>
+						Login</a></li> --><%if (loginchk == null) { %><%--비로그인상태 --%>
 				<li><a data-toggle="modal"  role = "button" id = "login"
 						data-target="#loginModal">
 						<span class="glyphicon glyphicon-log-in">Login</span></a></li>
-						<%} else { %>
-							<li><a href = "index.jsp?CONTENTPAGE=./indexframe/frontpage.jsp""></a></li>
+						<%} else { %><%--로그인상태 --%>
+							<li><a href = "index.jsp?CONTENTPAGE=./account/logout.jsp">
+							<span class="glyphicon glyphicon-log-out">logout</span></a></li>
 						<%} %>
 					
 			</ul>
